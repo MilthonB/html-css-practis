@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecommerce - Home</title> <!-- Titulo del sitio  -->
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -51,110 +55,115 @@ Tods tienen etiquetas de apertura y de cierre
 
     <div class="hero"></div>
 
-    <section>
-        <h2> Categorias de Productos </h2>
+    <section class="container categorias">
+        <h2 class="text-center"> Categorias de Productos </h2>
         <!-- Img solo tiene appertura no tiene cierre  -->
         <!-- El alt aparece cuando la iamgen no carga se muestra el alt como un contendio -->
-        <div>
-            <img src="imgs/categoria1.jpg" alt="Imagen Categoria">
-            <a href="#">Oficina</a>
-        </div>
 
-        <div>
-            <img src="imgs/categoria2.jpg" alt="Imagen Categoria">
-            <a href="#">Hogar</a>
-        </div>
+        <div class="list-categories">
+            <div class="categoria">
+                <img src="imgs/categoria1.jpg" alt="Imagen Categoria">
+                <a href="#">Oficina</a>
+            </div>
 
-        <div>
-            <img src="imgs/cate goria3.jpg" alt="Imagen Categoria">
-            <a href="#">Cocina</a>
+            <div class="categoria">
+                <img src="imgs/categoria2.jpg" alt="Imagen Categoria">
+                <a href="#">Hogar</a>
+            </div>
+
+            <div class="categoria">
+                <img src="imgs/categoria3.jpg" alt="Imagen Categoria">
+                <a href="#">Cocina</a>
+            </div>
         </div>
         <!-- <img src="./imgs/categoria2.jpg" alt="Imagen Categoria"/>-->
     </section>
 
     <Section class="sobre-nosotros">
-        <div>
-            <h2>Sobre Nosotros</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error a iusto id. Nam possimus magni dolor
-                reiciendis, vitae distinctio laudantium placeat saepe et, inventore rerum praesentium, architecto
-                aliquid sint maiores.</p>
+        <div class="container sobre-nosotros-grid">
+            <div class="texto-nosotros">  <!-- Este es solo un hijo del grid --> 
+                <h2 >Sobre Nosotros</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error a iusto id. Nam possimus magni dolor
+                    reiciendis, vitae distinctio laudantium placeat saepe et, inventore rerum praesentium, architecto
+                    aliquid sint maiores.</p>
+            </div>
         </div>
     </Section>
 
     <!-- El main define cual es la informacion mas importante de la pagina lo mas relevante para eso se uusa el main -->
-    <main>
+    <main class="container contenido-principal">
         <!-- Solo dos o tres por pagina -->
-        <h2> Nuestros Productos</h2> 
-        <div>
-            <div>
+        <h2 class="text-center"> Nuestros Productos</h2>
+        <div class="list-products">
+            <div  class="product">
                 <img src="imgs/producto1.jpg" alt="Imagen Producto">
-                <div>
+                <div class="texto-producto">
                     <h3>Producto 1</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sit sint quibusdam repellat
                         provident, aliquam inventore quasi quo, reprehenderit accusantium assumenda, non similique
                         optio! Cum esse ipsum corrupti veritatis enim.</p>
-                    <p>$1,000,000.00</p>
-                    <a href="#">Agregar al carrito</a>
+                    <p class="precio">$1,000,000.00</p>
+                    <a class="btn" href="#">Agregar al carrito</a>
                 </div> <!--Info del producto-->
             </div> <!--Producto-->
 
-            <div>
+            <div class="product">
                 <img src="imgs/producto2.jpg" alt="Imagen Producto">
-                <div>
+                <div class="texto-producto">
                     <h3>Producto 2</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sit sint quibusdam repellat
                         provident, aliquam inventore quasi quo, reprehenderit accusantium assumenda, non similique
                         optio! Cum esse ipsum corrupti veritatis enim.</p>
-                    <p>$1,000,000.00</p>
-                    <a href="#">Agregar al carrito</a>
+                    <p class="precio">$1,000,000.00</p>
+                    <a class="btn" href="#">Agregar al carrito</a>
                 </div> <!--Info del producto-->
             </div> <!--Producto-->
 
-            <div>
+            <div class="product">
                 <img src="imgs/producto3.jpg" alt="Imagen Producto">
-                <div>
+                <div class="texto-producto">
                     <h3>Producto 3</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sit sint quibusdam repellat
                         provident, aliquam inventore quasi quo, reprehenderit accusantium assumenda, non similique
                         optio! Cum esse ipsum corrupti veritatis enim.</p>
-                    <p>$1,000,000.00</p>
-                    <a href="#">Agregar al carrito</a>
+                    <p class="precio">$1,000,000.00</p>
+                    <a class="btn" href="#">Agregar al carrito</a>
                 </div> <!--Info del producto-->
             </div> <!--Producto-->
 
-            <div>
+            <div class="product">
                 <img src="imgs/producto4.jpg" alt="Imagen Producto">
-                <div>
+                <div class="texto-producto">
                     <h3>Producto 4</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sit sint quibusdam repellat
                         provident, aliquam inventore quasi quo, reprehenderit accusantium assumenda, non similique
                         optio! Cum esse ipsum corrupti veritatis enim.</p>
-                    <p>$1,000,000.00</p>
-                    <a href="#">Agregar al carrito</a>
+                    <p class="precio">$1,000,000.00</p>
+                    <a class="btn" href="#">Agregar al carrito</a>
                 </div> <!--Info del producto-->
             </div> <!--Producto-->
 
-            <div>
+            <div class="product">
                 <img src="imgs/producto5.jpg" alt="Imagen Producto">
-                <div>
+                <div class="texto-producto">
                     <h3>Producto 5</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sit sint quibusdam repellat
                         provident, aliquam inventore quasi quo, reprehenderit accusantium assumenda, non similique
                         optio! Cum esse ipsum corrupti veritatis enim.</p>
-                    <p>$1,000,000.00</p>
-                    <a href="#">Agregar al carrito</a>
+                    <p class="precio">$1,000,000.00</p>
+                    <a class="btn" href="#">Agregar al carrito</a>
                 </div> <!--Info del producto-->
             </div> <!--Producto-->
 
-            <div>
+            <div class="product">
                 <img src="imgs/producto6.jpg" alt="Imagen Producto">
-                <div>
+                <div class="texto-producto">
                     <h3>Producto 6</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sit sint quibusdam repellat
                         provident, aliquam inventore quasi quo, reprehenderit accusantium assumenda, non similique
                         optio! Cum esse ipsum corrupti veritatis enim.</p>
-                    <p>$1,000,000.00</p>
-                    <a href="#">Agregar al carrito</a>
+                    <p class="precio">$1,000,000.00</p>
+                    <a class="btn" href="#">Agregar al carrito</a>
                 </div> <!--Info del producto-->
             </div> <!--Producto-->
         </div><!--Fin del listado del productos-->
@@ -162,36 +171,38 @@ Tods tienen etiquetas de apertura y de cierre
 
 
 
-    <footer>
-        <div>
-            <h3>Categorias</h3>
-            <nav id="navegacion">
-                <a href="#">Cocina</a>
-                <a href="#">Oficina</a>
-                <a href="#">Jardin</a>
-                <a href="#">Cochera</a>
-                <a href="#">Dormitorio</a>
-            </nav>
+    <footer class="site-footer">
+        <div class="footer-grid container">
+            <div>
+                <h3>Categorias</h3>
+                <nav class="footer-menu">
+                    <a href="#">Cocina</a>
+                    <a href="#">Oficina</a>
+                    <a href="#">Jardin</a>
+                    <a href="#">Cochera</a>
+                    <a href="#">Dormitorio</a>
+                </nav>
+            </div>
+            <div>
+                <h3>Sobre nosotros</h3>
+                <nav class="footer-menu">
+                    <a href="#">Nuestra Historia</a>
+                    <a href="#">Mision Vision y Valores</a>
+                    <a href="#">Carreras</a>
+                    <a href="#">Politicas de Privacidad</a>
+                    <a href="#">terminos y servicios</a>
+                </nav>
+            </div>
+            <div>
+                <h3>Soporte</h3>
+                <nav class="footer-menu">
+                    <a href="#">Preguntas Frecuentes</a>
+                    <a href="#">Ayuda en linea</a>
+                    <a href="#">Confianza y Seguridad</a>
+                </nav>
+            </div>
         </div>
-        <div>
-            <h3>Sobre nosotros</h3>
-            <nav class="navegacion">
-                <a href="#">Nuestra Historia</a>
-                <a href="#">Mision Vision y Valores</a>
-                <a href="#">Carreras</a>
-                <a href="#">Politicas de Privacidad</a>
-                <a href="#">terminos y servicios</a>
-            </nav>
-        </div>
-        <div>
-            <h3>Soporte</h3>
-            <nav>
-                <a href="#">Preguntas Frecuentes</a>
-                <a href="#">Ayuda en linea</a>
-                <a href="#">Confianza y Seguridad</a>
-            </nav>
-        </div>
-        <p>Todos los derechos reservados. TiendMuebles@</p>
+        <p class="copyright">Todos los derechos reservados. TiendMuebles@</p>
     </footer>
 
 
