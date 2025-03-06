@@ -1,3 +1,7 @@
+/* Con este snippet aplica el box sizing y respeta el wid de tus box  */
+*, *:before, *:after{
+    box-sizing: inherit;
+}
 /* h1 {
     color: #000;
 } */
@@ -11,22 +15,57 @@
 .nombre-sitio {
     margin-top: 50px;
     margin-bottom: 50px;
+    text-align: center;
 }
 
-/* Con este snippet aplica el box sizing y respeta el wid de tus box  */
-*, *:before, *:after{
-    box-sizing: inherit;
+.container {
+    max-width: 1200px;
+    /* margin: 0 auto; */
+    margin-inline: auto; /* Propiedades nuevas de css */
+}
+
+/* Globales */
+
+/* Header y Navegacion */
+a{
+    text-decoration: none; /* Para eliminar la linea de abajo */
+    color: #000;
+}
+
+/* Felxbox solo afecta a los primero hijos del padre */
+
+.navegacion-principal {
+    /* border-top: 1px solid #e1e1e1; */
+    padding: 20px 0px; /* top rigth bottom left */
+    /* Como hacer que un elemento tenga flexbox o soporte las propiedades de flexbox */
+    display: flex; /* Con esto le estas diciendo que el elemtento tendra las propiedades de flex */
+    /* flex-direction: row; */
+    justify-content:  space-between;
+    /* align-items: center; */
+}
+
+.container-nav {
+    border-top: 1px solid #e1e1e1;
+}
+
+
+.hero {
+    /* Por default las imagenes de fondo se repiten en automatico */
+    background-image: url(../imgs/principal.jpg);
+    background-repeat: no-repeat; /* para que no repita la imagen*/
+    background-size: cover; /* Para cubir todo el espacio restante con la imagen */
+    height: 550px; /* Para darle un tamanio al container */
 }
 
 /* Box Model */
 
-.sobre-nosotros {
-    background-color: red;
+/* .sobre-nosotros { */
+    /* background-color: red;
     width: 200px;
-    padding: 25px;
+    padding: 25px; */
     /* box-sizing: border-box; Respeta el width asignado */
     /* box-sizing: content-box; se adapta y el incrementa el width */
-}
+/* } */
 
 
 /* Displays */
