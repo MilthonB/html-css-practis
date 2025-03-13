@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burbujas</title>
+    <style>
+        /* Fondo gradiente para el body */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #a8c6ff, #f0f8ff);
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            overflow: auto;
+            position: relative;
+        }
+
+        /* Contenedor de burbujas flotantes */
+        .bubbles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        /* Animación para las burbujas */
+        @keyframes float {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(50px);
+    }
+    50% {
+        bottom: 50%;
+        transform: translateX(100px);
+    }
+    75% {
+        transform: translateX(-50px);
+    }
+    100% {
+        bottom: 100%;
+        transform: translateX(0);
+    }
+}
+
+
+
+        /* Variaciones de tamaño y posición de las burbujas */
+        .bubble:nth-child(1) {
+            width: 30px;
+            height: 30px;
+            animation-duration: 7s;
+            left: 10%;
+        }
+
+        .bubble:nth-child(2) {
+            width: 50px;
+            height: 50px;
+            animation-duration: 9s;
+            left: 25%;
+        }
+
+        .bubble:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            animation-duration: 8s;
+            left: 50%;
+        }
+
+        .bubble:nth-child(4) {
+            width: 60px;
+            height: 60px;
+            animation-duration: 11s;
+            left: 70%;
+        }
+
+        .bubble:nth-child(5) {
+            width: 35px;
+            height: 35px;
+            animation-duration: 10s;
+            left: 85%;
+        }
+
+        .bubble:nth-child(6) {
+            width: 45px;
+            height: 45px;
+            animation-duration: 6s;
+            left: 35%;
+        }
+
+        .bubble:nth-child(7) {
+            width: 35px;
+            height: 35px;
+            animation-duration: 10s;
+            left: 45%;
+        }
+
+        .bubble:nth-child(8) {
+            width: 65px;
+            height: 65px;
+            animation-duration: 14s;
+            left: 5%;
+        }
+
+        .bubble:nth-child(9) {
+            width: 50px;
+            height: 50px;
+            animation-duration: 16s;
+            left: 75%;
+        }
+
+        .bubble:nth-child(10) {
+            width: 35px;
+            height: 35px;
+            animation-duration: 6s;
+            left: 59%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Contenedor de burbujas -->
+    <div class="bubbles-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+</body>
+
+</html>

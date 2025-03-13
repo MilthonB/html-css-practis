@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleaningLD</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Fondo azul para toda la página */
+        body {
+            background-color: #E3F2FD; /* Azul claro */
+            color: #0D47A1; /* Azul oscuro para el texto */
+        }
+
+        /* Navbar con fondo azul más intenso */
+        .navbar {
+            background-color: #1976D2; /* Azul medio */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        /* Estilos para el título centrado en el navbar */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .navbar-brand img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .navbar-brand .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: white; /* Texto en blanco para contrastar con el fondo azul */
+        }
+
+        /* Estilos para los enlaces del navbar */
+        .navbar-nav .nav-link {
+            color: white !important; /* Texto en blanco */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #BBDEFB !important; /* Azul claro al pasar el cursor */
+        }
+
+        /* Botón de contacto en el navbar */
+        .btn-elegant-blue {
+            background-color: #2196F3; /* Azul brillante */
+            color: white; /* Texto en blanco */
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-elegant-blue:hover {
+            background-color: #1E88E5; /* Azul más oscuro al pasar el cursor */
+        }
+
+        /* Estilos para el contenido principal */
+        .container-centered {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .content-section h2 {
+            font-size: 14px;
+            color: #1976D2; /* Azul medio */
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .content-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #0D47A1; /* Azul oscuro */
+            margin-bottom: 20px;
+        }
+        .content-section p {
+            font-size: 16px;
+            color: #0D47A1; /* Azul oscuro */
+            margin-bottom: 30px;
+        }
+        .content-section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .features-section {
+            padding: 10px;
+            background-color: #E3F2FD; /* Fondo blanco semitransparente */
+            border-radius: 10px; /* Bordes redondeados */
+        }
+        .features-section .feature-card {
+            background-color: white; /* Azul brillante */
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+        }
+        .features-section .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .features-section .feature-icon {
+            font-size: 40px;
+            color: rgb(249, 0, 0);
+            margin-bottom: 20px;
+        }
+        .features-section h2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #0D47A1; /* Azul oscuro */
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .features-section h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0D47A1;
+            margin-bottom: 15px;
+        }
+        .features-section p {
+            font-size: 14px;
+            color: #031127;
+        }
+        .evidencias-section {
+            padding: 60px 0;
+            background-color: #E3F2FD; /* Fondo blanco semitransparente */
+            /* border-radius: 10px; Bordes redondeados */
+        }
+        .evidencias-section h2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #0D47A1; /* Azul oscuro */
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .evidencias-section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .evidencias-section img:hover {
+            transform: scale(1.1);
+        }
+        .evidencias-section p {
+            font-size: 16px;
+            color: #0D47A1; /* Azul oscuro */
+            text-align: center;
+        }
+        .evidencias-section .servicio-titulo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1976D2; /* Azul medio */
+            margin-bottom: 10px;
+        }
+        .modal-img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .arrow {
+            font-size: 40px;
+            color: #1976D2; /* Azul medio */
+            margin: 0 20px;
+            align-self: center;
+        }
+        .evidencias-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Contenedor blanco con sombra */
+
+
+        .divider {
+    max-width: 1200px;
+    width: 100%;
+    height: 2px; /* Línea un poco más gruesa */
+    background-color: #a2bbd8; /* Verde agua */
+    margin: 30px auto; /* Más espacio alrededor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 2px; /* Bordes ligeramente redondeados */
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar con Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <!-- Logo y título (centrado) -->
+            <a class="navbar-brand" href="#">
+                <img src="https://cdn-icons-png.flaticon.com/512/2917/2917637.png" alt="Logo">
+                <span class="title">CleaningLD</span>
+            </a>
+
+            <!-- Botón para menú en móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Opciones de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">
+                            <button class="btn btn-elegant-blue">Contacto</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de contenido -->
+    <section class="content-section">
+        <div>
+            <div class="container-centered">
+                <div class="row align-items-center">
+                    <!-- Primera columna: Texto y botón -->
+                    <div class="col-md-6">
+                        <h2>Cualquier cosa</h2>
+                        <h1>Limpieza Profesional</h1>
+                        <p>
+                            Ofrecemos servicios de limpieza de alta calidad para hogares y oficinas. 
+                            Nuestro equipo está capacitado para dejar tu espacio impecable y reluciente.
+                        </p>
+                        <button class="btn btn-elegant-blue">Saber más</button>
+                    </div>
+                    
+                    <!-- Segunda columna: Imagen -->
+                    <div class="col-md-6">
+                        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Limpieza Profesional">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Sección de features (6 categorías) -->
+    <section class="features-section">
+        <div class="container-centered">
+            <!-- Título "Servicios" -->
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2>Servicios</h2>
+                </div>
+            </div>
+
+            <!-- Contenedor de características -->
+            <div class="row">
+                <!-- Feature 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧹</div>
+                        <h3>Limpieza Residencial</h3>
+                        <p>
+                            Servicios de limpieza para hogares, garantizando un ambiente limpio y saludable.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🏢</div>
+                        <h3>Limpieza Comercial</h3>
+                        <p>
+                            Limpieza profesional para oficinas y espacios comerciales, adaptada a tus necesidades.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚿</div>
+                        <h3>Limpieza Profunda</h3>
+                        <p>
+                            Servicios de limpieza profunda para áreas difíciles, eliminando suciedad acumulada.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧽</div>
+                        <h3>Limpieza de Alfombras</h3>
+                        <p>
+                            Servicios especializados en la limpieza de alfombras, dejándolas como nuevas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🪣</div>
+                        <h3>Limpieza de Ventanas</h3>
+                        <p>
+                            Limpieza profesional de ventanas, garantizando transparencia y brillo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧴</div>
+                        <h3>Limpieza Ecológica</h3>
+                        <p>
+                            Servicios de limpieza con productos ecológicos, cuidando el medio ambiente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+
+    <!-- Sección de evidencias -->
+    <section class="evidencias-section">
+        <div class="container-centered">
+            <!-- Título de la sección -->
+            <div class="row text-center mb-5">
+                <div class="col-12">
+                    <h2>Evidencias</h2>
+                </div>
+            </div>
+    
+            <!-- Primer row: Texto, imagen "antes", imagen "después" -->
+            <div class="row evidencias-content">
+                <!-- Primera columna: Texto de la evidencia -->
+                <div class="col-md-4 text-center container-white-shadow">
+                    <p class="servicio-titulo">Limpieza de Alfombras</p>
+                    <p>
+                        En este proyecto, realizamos una limpieza profunda de alfombras en una oficina. 
+                        Las alfombras estaban llenas de manchas y suciedad acumulada. Utilizamos 
+                        técnicas avanzadas y productos ecológicos para devolverles su brillo original.
+                    </p>
+                </div>
+
+                <!-- Segunda columna: Imagen de "antes" -->
+                <div class="col-md-4 text-center">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Antes de la limpieza" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalAntes">
+                    <p class="text-center">Antes</p>
+                </div>
+
+                <!-- Tercera columna: Imagen de "después" -->
+                <div class="col-md-4 text-center">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Después de la limpieza" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalDespues">
+                    <p class="text-center">Después</p>
+                </div>
+            </div>
+
+            <!-- Segundo row: Imagen "antes", imagen "después", texto -->
+            <div class="row evidencias-content mt-5">
+                <!-- Primera columna: Imagen de "antes" -->
+                <div class="col-md-4 text-center">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Antes de la limpieza" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalAntes">
+                    <p class="text-center">Antes</p>
+                </div>
+
+                <!-- Segunda columna: Imagen de "después" -->
+                <div class="col-md-4 text-center">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Después de la limpieza" class="img-fluid" data-bs-toggle="modal" data-bs-target="#modalDespues">
+                    <p class="text-center">Después</p>
+                </div>
+
+                <!-- Tercera columna: Texto de la evidencia -->
+                <div class="col-md-4 text-center">
+                    <p class="servicio-titulo">Limpieza de Ventanas</p>
+                    <p>
+                        En este proyecto, realizamos una limpieza profesional de ventanas en un edificio de oficinas. 
+                        Las ventanas estaban opacas y llenas de manchas. Utilizamos técnicas especializadas para 
+                        devolverles su transparencia y brillo.
+                    </p>
+                </div>
+            </div>
+
+    <div class="divider"></div>
+            <!-- Botón "Ver más evidencias" -->
+            <div class="row mt-5">
+                <div class="col-12 text-end">
+                    <button class="btn btn-elegant-blue">Ver más evidencias</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Modal para la imagen "antes" -->
+    <div class="modal fade" id="modalAntes" tabindex="-1" aria-labelledby="modalAntesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Antes de la limpieza" class="modal-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para la imagen "después" -->
+    <div class="modal fade" id="modalDespues" tabindex="-1" aria-labelledby="modalDespuesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Después de la limpieza" class="modal-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
